@@ -13,8 +13,8 @@ export const HandleOryFlowError =
         const status = error.response?.status;
 
         switch (true) {
-            case errorId === "session_already_available": // User already signed in
-            case status === 400: // User is already signed in
+            case errorId === "session_already_available": // User already authenticated
+            case status === 400: // User already authenticated
                 router.push("/");
                 break;
             case errorId === "session_inactive": // User not logged in
@@ -33,8 +33,7 @@ export const HandleOryFlowError =
             case status === 403: // Other issue (e.g. CSRF)
                 router.push(`/${flowType}`);
                 break;
-            // Return error by default
-            default:
+            default: // Return error by default
                 return Promise.reject(error);
                 break;
         }

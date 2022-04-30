@@ -32,6 +32,7 @@ export const OryUiNodeInputText = ({
                 title={node.meta.label?.text}
                 type={attributes.type}
                 {...register(attributes.name)}
+                defaultValue={attributes.value || ""}
                 placeholder={`Enter ${getNodeLabel(node)}`}
                 disabled={attributes.disabled || formState.isSubmitting}
                 className={`w-full h-12 rounded-md px-4 flex items-center outline-none ${
@@ -144,7 +145,7 @@ export const OryUiNodeInput = ({
             return (
                 <input
                     type={attributes.type}
-                    name={attributes.name}
+                    {...register(attributes.name)}
                     value={attributes.value || "true"}
                 />
             );

@@ -74,19 +74,23 @@ export const VerificationPage: NextPage = () => {
             <SeoMeta title="Verify your account" />
             <BodyClass className="bg-blue-800" />
             <Header />
-            <div className="max-w-sm mx-auto p-6 bg-white shadow-2xl rounded-xl">
-                <h1 className="text-center font-bold text-xl pb-6">
-                    Verify Your Account
-                </h1>
-                <OryFlowUi flow={flow} submitHandler={HandleSubmit} />
-            </div>
-            <div className="max-w-sm mx-auto p-6">
-                <Link href="/" passHref>
-                    <a className={`font-bold underline text-white ${ButtonSm}`}>
-                        Go back
-                    </a>
-                </Link>
-            </div>
+            <main className="px-4">
+                <div className="max-w-sm mx-auto p-3 pb-1 sm:p-6 sm:pb-3 bg-white shadow-2xl rounded-xl">
+                    <h1 className="text-center font-bold text-xl pb-6">
+                        Verify Your Account
+                    </h1>
+                    <OryFlowUi flow={flow} submitHandler={HandleSubmit} />
+                </div>
+                <div className="max-w-sm mx-auto p-3 sm:p-6">
+                    <Link href="/" passHref>
+                        <a
+                            className={`font-bold underline text-white ${ButtonSm}`}
+                        >
+                            Go back
+                        </a>
+                    </Link>
+                </div>
+            </main>
         </>
     );
 };

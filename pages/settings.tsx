@@ -88,11 +88,11 @@ export const SettingsPage: NextPage = () => {
         <>
             <SeoMeta title="Profile Management and Security Settings" />
             <BodyClass className="bg-blue-800" />
-            <main className="pb-20">
+            <main className="pb-20 px-4">
                 <Header />
                 {/* Profile */}
                 {SectionHasFields(flow, "profile") && (
-                    <div className="max-w-sm mx-auto p-6 mb-6 bg-white shadow-2xl rounded-xl">
+                    <div className="max-w-sm mx-auto p-3 pb-1 sm:p-6 sm:pb-3 mb-6 bg-white shadow-2xl rounded-xl">
                         <h2 className="pb-6 text-center font-bold text-xl">
                             Profile Settings
                         </h2>
@@ -106,7 +106,7 @@ export const SettingsPage: NextPage = () => {
 
                 {/* Password */}
                 {SectionHasFields(flow, "password") && (
-                    <div className="max-w-sm mx-auto p-6 mb-6 bg-white shadow-2xl rounded-xl">
+                    <div className="max-w-sm mx-auto p-3 pb-1 sm:p-6 sm:pb-3 mb-6 bg-white shadow-2xl rounded-xl">
                         <h2 className="pb-6 text-center font-bold text-xl">
                             Change Password
                         </h2>
@@ -120,7 +120,7 @@ export const SettingsPage: NextPage = () => {
 
                 {/* Social Profiles */}
                 {SectionHasFields(flow, "oidc") && (
-                    <div className="max-w-sm mx-auto p-6 mb-6 bg-white shadow-2xl rounded-xl">
+                    <div className="max-w-sm mx-auto p-3 pb-1 sm:p-6 sm:pb-3 mb-6 bg-white shadow-2xl rounded-xl">
                         <h2 className="pb-6 text-center font-bold text-xl">
                             Manage Social Sign In
                         </h2>
@@ -134,7 +134,7 @@ export const SettingsPage: NextPage = () => {
 
                 {/* 2FA Codes */}
                 {SectionHasFields(flow, "lookup_secret") && (
-                    <div className="max-w-sm mx-auto p-6 mb-6 bg-white shadow-2xl rounded-xl">
+                    <div className="max-w-sm mx-auto p-3 pb-1 sm:p-6 sm:pb-3 mb-6 bg-white shadow-2xl rounded-xl">
                         <h2 className="pb-6 text-center font-bold text-xl">
                             Manage 2FA Backup Recovery Codes
                         </h2>
@@ -152,7 +152,7 @@ export const SettingsPage: NextPage = () => {
 
                 {/* 2FA Authenticator */}
                 {SectionHasFields(flow, "totp") && (
-                    <div className="max-w-sm mx-auto p-6 mb-6 bg-white shadow-2xl rounded-xl">
+                    <div className="max-w-sm mx-auto p-3 pb-1 sm:p-6 sm:pb-3 mb-6 bg-white shadow-2xl rounded-xl">
                         <h2 className="pb-6 text-center font-bold text-xl">
                             Manage 2FA TOTP Authenticator App
                         </h2>
@@ -195,7 +195,7 @@ export const SettingsPage: NextPage = () => {
 
                 {/* 2FA Authenticator */}
                 {SectionHasFields(flow, "webauthn") && (
-                    <div className="max-w-sm mx-auto p-6 bg-white shadow-2xl rounded-xl">
+                    <div className="max-w-sm mx-auto p-3 pb-1 sm:p-6 sm:pb-3 bg-white shadow-2xl rounded-xl">
                         <h2 className="pb-6 text-center font-bold text-xl">
                             Manage Hardware Tokens and Biometrics
                         </h2>

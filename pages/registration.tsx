@@ -81,9 +81,9 @@ export const RegistrationPage: NextPage = () => {
         <>
             <SeoMeta title="Create an account" />
             <BodyClass className="bg-blue-800" />
-            <main className="pb-20">
+            <main className="pb-20 px-4">
                 <Header />
-                <div className="max-w-sm mx-auto p-6 bg-white shadow-2xl rounded-xl">
+                <div className="max-w-sm mx-auto p-3 sm:p-6 bg-white shadow-2xl rounded-xl">
                     <h1 className="pb-6 text-xl font-bold text-center text-blue-800">
                         Create Account
                     </h1>

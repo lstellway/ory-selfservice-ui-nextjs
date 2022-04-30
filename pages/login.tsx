@@ -106,9 +106,9 @@ export const LoginPage: NextPage = () => {
                     __html: `document.body.classList.add("bg-blue-800");`,
                 }}
             />
-            <main className="pb-20">
+            <main className="pb-20 px-4">
                 <Header />
-                <div className="max-w-sm mx-auto p-6 bg-white shadow-2xl rounded-xl">
+                <div className="max-w-sm mx-auto p-3 sm:p-6 bg-white shadow-2xl rounded-xl">
                     {/* <h2>
                         {(() => {
                             switch (true) {
@@ -154,7 +154,7 @@ export const LoginPage: NextPage = () => {
                     </div>
                 </div>
                 {!loggedIn && (
-                    <div className="max-w-sm mx-auto p-6">
+                    <div className="max-w-sm mx-auto p-3 sm:p-6">
                         <Link href="/recovery" passHref>
                             <a
                                 className={`font-bold underline text-white ${ButtonSm}`}

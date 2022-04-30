@@ -76,15 +76,15 @@ export const RecoveryPage: NextPage = () => {
         <>
             <SeoMeta title="Recover your account" />
             <BodyClass className="bg-blue-800" />
-            <main className="pb-20">
+            <main className="pb-20 px-4">
                 <Header />
-                <div className="max-w-sm mx-auto p-6 bg-white shadow-2xl rounded-xl">
+                <div className="max-w-sm mx-auto p-3 sm:p-6 bg-white shadow-2xl rounded-xl">
                     <h2 className="pb-6 text-center font-bold text-xl">
                         Recover Your Account
                     </h2>
                     <OryFlowUi submitHandler={HandleSubmit} flow={flow} />
                 </div>
-                <div className="max-w-sm mx-auto p-6">
+                <div className="max-w-sm mx-auto p-3 sm:p-6">
                     <Link href="/" passHref>
                         <a
                             className={`font-bold underline text-white ${ButtonSm}`}
