@@ -35,7 +35,6 @@ const SectionHasFields = (flow?: SelfServiceSettingsFlow, only?: string) => {
  */
 export const SettingsPage: NextPage = () => {
     const router = useRouter();
-    const query = router.query as OryPageQuery;
     const [flow, setFlow] = useState<SelfServiceSettingsFlow>();
 
     // Initialize flow
@@ -46,10 +45,11 @@ export const SettingsPage: NextPage = () => {
         }
 
         // Get flow
-        OryGetOrInitializeFlow("settings", query, router).then((data) => {
-            setFlow(data as SelfServiceSettingsFlow);
-        });
-    }, [router, router.isReady, flow, query]);
+        OryGetOrInitializeFlow<SelfServiceSettingsFlow>(
+            "settings",
+            router
+        ).then(setFlow);
+    }, [router, router.isReady, flow]);
 
     // Handle form submission
     const HandleSubmit = (values: OryFlowValues) => {

@@ -120,11 +120,12 @@ export const OryInitializeSelfServiceFlow = (
 /**
  * Initialize a flow
  */
-export const OryGetOrInitializeFlow = (
+export const OryGetOrInitializeFlow = <S extends OryFlowObject>(
     flowType: OryFlowType,
-    query: OryPageQuery,
     router: NextRouter
 ) => {
+    const query = router.query as OryPageQuery;
+
     return (
         query.flow
             ? OryGetSelfServiceFlow(flowType, query)
@@ -136,6 +137,6 @@ export const OryGetOrInitializeFlow = (
                 return Promise.reject();
             }
 
-            return data.data;
+            return data.data as S;
         });
 };

@@ -22,7 +22,6 @@ import { BodyClass } from "@lib/utils/misc";
 
 export const RecoveryPage: NextPage = () => {
     const router = useRouter();
-    const query = router.query as OryPageQuery;
     const [flow, setFlow] = useState<SelfServiceRecoveryFlow>();
 
     // Initialize flow
@@ -34,10 +33,11 @@ export const RecoveryPage: NextPage = () => {
         }
 
         // Get flow
-        OryGetOrInitializeFlow("recovery", query, router).then((data) => {
-            setFlow(data as SelfServiceRecoveryFlow);
-        });
-    }, [router, router.isReady, flow, query]);
+        OryGetOrInitializeFlow<SelfServiceRecoveryFlow>(
+            "recovery",
+            router
+        ).then(setFlow);
+    }, [router, router.isReady, flow]);
 
     // Handle form submission
     const HandleSubmit = (values: OryFlowValues) => {

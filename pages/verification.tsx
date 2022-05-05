@@ -24,7 +24,6 @@ import { ButtonSm } from "@lib/components/button";
  */
 export const VerificationPage: NextPage = () => {
     const router = useRouter();
-    const query = router.query as OryPageQuery;
     const [flow, setFlow] = useState<SelfServiceVerificationFlow>();
 
     // Initialize the flow
@@ -35,10 +34,11 @@ export const VerificationPage: NextPage = () => {
         }
 
         // Get flow
-        OryGetOrInitializeFlow("verification", query, router).then((data) => {
-            setFlow(data as SelfServiceVerificationFlow);
-        });
-    }, [router, router.isReady, flow, query]);
+        OryGetOrInitializeFlow<SelfServiceVerificationFlow>(
+            "verification",
+            router
+        ).then(setFlow);
+    }, [router, router.isReady, flow]);
 
     // Handle form submission
     const HandleSubmit = (values: OryFlowValues) => {

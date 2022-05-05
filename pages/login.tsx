@@ -46,10 +46,10 @@ export const LoginPage: NextPage = () => {
         }
 
         // Get flow
-        OryGetOrInitializeFlow("login", query, router).then((data) =>
-            setFlow(data as SelfServiceLoginFlow)
+        OryGetOrInitializeFlow<SelfServiceLoginFlow>("login", router).then(
+            setFlow
         );
-    }, [router, router.isReady, flow, query]);
+    }, [router, router.isReady, flow]);
 
     // Get a logout token
     useEffect(() => {

@@ -25,7 +25,6 @@ import { Header } from "@lib/components/layout";
  */
 export const RegistrationPage: NextPage = () => {
     const router = useRouter();
-    const query = router.query as OryPageQuery;
     const [flow, setFlow] = useState<SelfServiceRegistrationFlow>();
 
     useEffect(() => {
@@ -36,10 +35,11 @@ export const RegistrationPage: NextPage = () => {
         }
 
         // Get flow
-        OryGetOrInitializeFlow("registration", query, router).then((data) => {
-            setFlow(data as SelfServiceRegistrationFlow);
-        });
-    }, [router, router.isReady, query, flow]);
+        OryGetOrInitializeFlow<SelfServiceRegistrationFlow>(
+            "registration",
+            router
+        ).then(setFlow);
+    }, [router, router.isReady, flow]);
 
     const HandleSubmit = (values: OryFlowValues) => {
         console.log("Submitting", values);
